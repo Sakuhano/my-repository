@@ -1,2 +1,9 @@
-# my-repository
-para clase de tic
+<!DOCTYPE html>
+<html>
+<head>
+<title>My GitHub Page</title>
+</head>
+<body>
+<h1>Welcome to My GitHub Page</h1>
+</body>
+</html>
