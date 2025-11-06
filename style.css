@@ -100,47 +100,47 @@ footer {
 .section-image.gray-out:hover {
   box-shadow: 0 0 20px #33ff99, 0 0 40px #33ff99;
 }
-/* === Image Container with Gray Overlay === */
-.image-container {
-  position: relative;
-  width: 600px;         /* set image box width */
-  height: 350px;        /* set image box height */
+/* === Consistent Image Size for Index Page === */
+#intro .section-image,
+#beginner .section-image,
+#capabilities .section-image,
+#functions .section-image {
+  width: 100%;
+  max-width: 600px;
+  height: 300px; /* fixed height */
+  object-fit: cover; /* crop and stretch to fill */
+  display: block;
   margin: 20px auto;
-  overflow: hidden;     /* crop anything outside the box */
   border: 2px solid #33ff99;
   box-shadow: 0 0 10px #33ff99;
   border-radius: 6px;
+  position: relative;
 }
 
-/* Force the image to fill the box (crop, don’t stretch) */
-.image-container .section-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.3s ease, filter 0.3s ease;
+/* === Gray Transparent Overlay === */
+.section-image.gray-out {
+  filter: grayscale(60%);
+  opacity: 0.8;
+  transition: filter 0.3s, opacity 0.3s, transform 0.3s;
 }
 
-/* Gray transparent overlay */
-.image-container .overlay {
+.section-image.gray-out::after {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(50, 50, 50, 0.4); /* gray tint */
-  pointer-events: none; /* lets hover work on the image */
-  transition: background-color 0.3s ease;
+  background: rgba(50, 50, 50, 0.35); /* semi-transparent gray overlay */
   border-radius: 6px;
+  pointer-events: none; /* lets hover effects pass through */
 }
 
-/* On hover — lighten overlay and zoom image slightly */
-.image-container:hover .overlay {
-  background-color: rgba(50, 50, 50, 0.15);
-}
-
-.image-container:hover .section-image {
+/* === Hover Zoom + Glow === */
+.section-image.gray-out:hover {
+  filter: grayscale(0%);
+  opacity: 1;
   transform: scale(1.05);
-  filter: grayscale(0%) brightness(1.1);
+  box-shadow: 0 0 20px #33ff99, 0 0 40px #33ff99;
 }
 
