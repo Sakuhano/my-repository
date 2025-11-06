@@ -1,146 +1,70 @@
-/* Retro TI-84+CE Guide Styles */
-
-body {
-  background-color: #121212;
-  color: #33ff99;
-  font-family: 'Courier New', monospace;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  background-color: #0a0a0a;
-  padding: 20px;
-  text-align: center;
-  border-bottom: 2px solid #33ff99;
-}
-
-header h1 {
-  font-size: 2.5em;
-  text-shadow: 0 0 10px #33ff99;
-}
-
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  background-color: #1c1c1c;
-  border-bottom: 1px solid #33ff99;
-  padding: 10px 0;
-}
-
-nav a {
-  color: #33ff99;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.2s;
-}
-
-nav a:hover {
-  color: #fff;
-  text-shadow: 0 0 5px #33ff99;
-}
-
-main {
-  padding: 40px 10%;
-}
-
-section {
-  margin-bottom: 60px;
-}
-
-section h2 {
-  color: #fff;
-  text-shadow: 0 0 5px #33ff99;
-  border-bottom: 1px solid #33ff99;
-  padding-bottom: 5px;
+/* === Image Wrappers and Overlay === */
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  margin: 20px auto;
+  overflow: hidden;
+  border: 2px solid #33ff99;
+  box-shadow: 0 0 10px #33ff99;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 .section-image {
   width: 100%;
-  max-width: 600px;
+  height: 100%;
+  object-fit: cover;
   display: block;
-  margin: 20px auto;
-  border: 2px solid #33ff99;
-  box-shadow: 0 0 10px #33ff99;
-  border-radius: 6px;
+  transition: transform 0.3s, filter 0.3s, opacity 0.3s;
 }
 
-/* Grayscale and hover effect */
-.section-image.gray-out {
-  filter: grayscale(60%);
-  opacity: 0.8;
-  transition: filter 0.3s, opacity 0.3s;
-}
-
-.section-image.gray-out:hover {
-  filter: grayscale(0%);
-  opacity: 1;
-}
-
-footer {
-  background-color: #0a0a0a;
-  color: #33ff99;
-  text-align: center;
-  padding: 15px;
-  border-top: 1px solid #33ff99;
-}
-/* Hover zoom + color restore */
-.section-image.gray-out:hover {
-  filter: grayscale(0%);
-  opacity: 1;
-  transform: scale(1.05);
-  transition: filter 0.3s, opacity 0.3s, transform 0.3s;
-}
-.section-image.gray-out {
-  filter: grayscale(60%);
-  opacity: 0.8;
-  transition: filter 0.3s, opacity 0.3s, transform 0.3s;
-}
-.section-image.gray-out:hover {
-  box-shadow: 0 0 20px #33ff99, 0 0 40px #33ff99;
-}
-/* === Consistent Image Size for Index Page === */
-#intro .section-image,
-#beginner .section-image,
-#capabilities .section-image,
-#functions .section-image {
-  width: 100%;
-  max-width: 600px;
-  height: 300px; /* fixed height */
-  object-fit: cover; /* crop and stretch to fill */
-  display: block;
-  margin: 20px auto;
-  border: 2px solid #33ff99;
-  box-shadow: 0 0 10px #33ff99;
-  border-radius: 6px;
-  position: relative;
-}
-
-/* === Gray Transparent Overlay === */
-.section-image.gray-out {
-  filter: grayscale(60%);
-  opacity: 0.8;
-  transition: filter 0.3s, opacity 0.3s, transform 0.3s;
-}
-
-.section-image.gray-out::after {
-  content: "";
+/* Base overlay (light gray tint) */
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(50, 50, 50, 0.35); /* semi-transparent gray overlay */
+  background: rgba(60, 60, 60, 0.35);
+  transition: background 0.3s, opacity 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
   border-radius: 6px;
-  pointer-events: none; /* lets hover effects pass through */
 }
 
-/* === Hover Zoom + Glow === */
-.section-image.gray-out:hover {
+.overlay span {
+  color: #fff;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Hover: darker overlay + text appears */
+.image-wrapper:hover .overlay {
+  opacity: 1;
+  background: rgba(20, 20, 20, 0.7);
+}
+
+.image-wrapper:hover .overlay span {
+  opacity: 1;
+}
+
+.image-wrapper:hover .section-image {
+  transform: scale(1.05);
   filter: grayscale(0%);
   opacity: 1;
-  transform: scale(1.05);
   box-shadow: 0 0 20px #33ff99, 0 0 40px #33ff99;
 }
 
+/* Make sure the link fills the image */
+.image-link {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
