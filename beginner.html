@@ -27,7 +27,9 @@
 
       <!-- Turning On & Off -->
       <div class="collapsible">
-        <button class="collapsible-header">🔋 Turning On & Off</button>
+        <button class="collapsible-header">
+          <span class="arrow">▶</span> 🔋 Turning On & Off
+        </button>
         <div class="collapsible-content">
           <p>
             To turn your calculator on, press the <strong>ON</strong> key located at the bottom left corner of the keypad.
@@ -44,7 +46,9 @@
 
       <!-- The 2nd Key -->
       <div class="collapsible">
-        <button class="collapsible-header">🟦 The 2nd Key</button>
+        <button class="collapsible-header">
+          <span class="arrow">▶</span> 🟦 The 2nd Key
+        </button>
         <div class="collapsible-content">
           <p>
             The <strong>2nd</strong> key is one of the most important keys on the TI-84+CE.
@@ -61,7 +65,9 @@
 
       <!-- The ALPHA Key -->
       <div class="collapsible">
-        <button class="collapsible-header">🟩 The ALPHA Key</button>
+        <button class="collapsible-header">
+          <span class="arrow">▶</span> 🟩 The ALPHA Key
+        </button>
         <div class="collapsible-content">
           <p>
             The <strong>ALPHA</strong> key opens up the <em>green-labeled functions</em> printed above many buttons on the left side of the keypad.
@@ -78,7 +84,9 @@
 
       <!-- Navigating Menus -->
       <div class="collapsible">
-        <button class="collapsible-header">🧭 Navigating Menus</button>
+        <button class="collapsible-header">
+          <span class="arrow">▶</span> 🧭 Navigating Menus
+        </button>
         <div class="collapsible-content">
           <p>
             The TI-84+CE uses a simple menu system. You navigate through options using the four arrow keys:
@@ -95,7 +103,9 @@
 
       <!-- Graphing -->
       <div class="collapsible">
-        <button class="collapsible-header">📈 Graphing & Y= Menu</button>
+        <button class="collapsible-header">
+          <span class="arrow">▶</span> 📈 Graphing & Y= Menu
+        </button>
         <div class="collapsible-content">
           <p>
             Graphing is one of the TI-84+CE’s most powerful features.
@@ -122,10 +132,14 @@
       header.addEventListener("click", () => {
         header.classList.toggle("active");
         const content = header.nextElementSibling;
+        const arrow = header.querySelector(".arrow");
+
         if (content.style.maxHeight) {
           content.style.maxHeight = null;
+          arrow.style.transform = "rotate(0deg)";
         } else {
           content.style.maxHeight = content.scrollHeight + "px";
+          arrow.style.transform = "rotate(90deg)";
         }
       });
     });
