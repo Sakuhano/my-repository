@@ -1,0 +1,103 @@
+/* Retro TI-84+CE Guide Styles */
+
+body {
+  background-color: #121212;
+  color: #33ff99;
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #0a0a0a;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid #33ff99;
+}
+
+header h1 {
+  font-size: 2.5em;
+  text-shadow: 0 0 10px #33ff99;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  background-color: #1c1c1c;
+  border-bottom: 1px solid #33ff99;
+  padding: 10px 0;
+}
+
+nav a {
+  color: #33ff99;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  color: #fff;
+  text-shadow: 0 0 5px #33ff99;
+}
+
+main {
+  padding: 40px 10%;
+}
+
+section {
+  margin-bottom: 60px;
+}
+
+section h2 {
+  color: #fff;
+  text-shadow: 0 0 5px #33ff99;
+  border-bottom: 1px solid #33ff99;
+  padding-bottom: 5px;
+}
+
+.section-image {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 20px auto;
+  border: 2px solid #33ff99;
+  box-shadow: 0 0 10px #33ff99;
+  border-radius: 6px;
+}
+
+/* Grayscale and hover effect */
+.section-image.gray-out {
+  filter: grayscale(60%);
+  opacity: 0.8;
+  transition: filter 0.3s, opacity 0.3s;
+}
+
+.section-image.gray-out:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+footer {
+  background-color: #0a0a0a;
+  color: #33ff99;
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #33ff99;
+}
+/* Hover zoom + color restore */
+.section-image.gray-out:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+  transition: filter 0.3s, opacity 0.3s, transform 0.3s;
+}
+.section-image.gray-out {
+  filter: grayscale(60%);
+  opacity: 0.8;
+  transition: filter 0.3s, opacity 0.3s, transform 0.3s;
+}
+.section-image.gray-out:hover {
+  box-shadow: 0 0 20px #33ff99, 0 0 40px #33ff99;
+}
+
