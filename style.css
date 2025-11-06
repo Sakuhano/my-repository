@@ -200,4 +200,12 @@ footer {
   margin: 15px auto;
   box-shadow: 0 0 10px #33ff99;
 }
+/* Arrow animation for collapsibles */
+.collapsible-header .arrow {
+  display: inline-block;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+  color: #33ff99;
+  text-shadow: 0 0 8px #33ff99;
+}
 
