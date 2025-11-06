@@ -208,4 +208,18 @@ footer {
   color: #33ff99;
   text-shadow: 0 0 8px #33ff99;
 }
+/* Arrow basics and transition */
+.collapsible-header .arrow {
+  display: inline-block;       /* required so transform rotates the glyph */
+  margin-right: 10px;
+  transition: transform 0.25s ease;
+  transform: rotate(0deg);     /* default pointing right */
+  color: #33ff99;
+  text-shadow: 0 0 8px #33ff99;
+}
+
+/* Rotate arrow when the header has .active */
+.collapsible-header.active .arrow {
+  transform: rotate(90deg);    /* rotates to point down */
+}
 
