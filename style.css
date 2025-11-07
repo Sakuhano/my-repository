@@ -207,3 +207,64 @@ footer {
   padding: 15px;
   border-top: 1px solid #33ff99;
 }
+/* === Image Containers on Index === */
+.image-container {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.image-link {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 2px solid #33ff99;
+  box-shadow: 0 0 10px #33ff99;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.image-wrapper:hover img {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Overlay styling — now gray, not neon */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(40, 40, 40, 0); /* invisible by default */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #d3d3d3; /* light gray text */
+  font-size: 1.3em;
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  font-weight: bold;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.image-wrapper:hover .overlay {
+  background: rgba(60, 60, 60, 0.7); /* dark gray overlay */
+  opacity: 1;
+}
+
