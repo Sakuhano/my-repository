@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TI-84+CE Capabilities</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Simple collapsible logic
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".collapsible-header").forEach(header => {
+        header.addEventListener("click", () => {
+          header.classList.toggle("active");
+          const content = header.nextElementSibling;
+          content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
+        });
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <header>
+    <h1>TI-84+CE Capabilities</h1>
+    <p>Explore what your calculator can really do</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="beginner.html">Getting Started</a>
+    <a href="capabilities.html">Capabilities</a>
+    <a href="functions.html">Functions</a>
+    <a href="tips.html">Tips & Tricks</a>
+  </nav>
+
+  <main>
+    <section id="capabilities">
+      <h2>Calculator Capabilities</h2>
+
+      <!-- MAIN HEADER 1: Arithmetic and Core Functions -->
+      <div class="collapsible">
+        <button class="collapsible-header"><span class="arrow">▶</span>Arithmetic and Core Features</button>
+        <div class="collapsible-content">
+
+          <h3 style="color:#3399ff;">Creating Lists</h3>
+          <p>
+            The TI-84+CE lets you create and manage lists to organize sets of data. Using the <b>STAT → EDIT</b> menu, 
+            you can enter multiple lists for statistical analysis, regression, and graphing. Lists are powerful tools 
+            for comparing data sets, performing operations across values, and visualizing relationships.
+          </p>
+
+          <h3 style="color:#3399ff;">Statistics Functions</h3>
+          <p>
+            Within the <b>STAT → CALC</b> menu, the calculator can compute one-variable and two-variable statistics, 
+            run regressions, and find measures like mean, median, standard deviation, and correlation coefficients. 
+            These are especially useful for analyzing data in algebra, statistics, and science classes.
+          </p>
+
+          <h3 style="color:#3399ff;">Matrices</h3>
+          <p>
+            The <b>2nd → x<sup>-1</sup></b> key opens the <b>MATRIX</b> menu, which lets you create, edit, and perform operations on matrices. 
+            You can add, subtract, multiply, find determinants, inverses, and use matrices for solving systems of equations. 
+            The TI-84+CE handles both numeric and symbolic matrix calculations efficiently.
+          </p>
+
+          <h3 style="color:#3399ff;">Using Variables and the Store Function</h3>
+          <p>
+            You can store values, equations, or expressions into variables using the <b>STO→</b> key. 
+            For example, typing <code>5 → A</code> stores 5 in variable A. This allows you to reuse values 
+            across different problems or computations without retyping them, making your workflow more efficient.
+          </p>
+
+          <h3 style="color:#3399ff;">The MATH Menu</h3>
+          <p>
+            The <b>MATH</b> button is one of the most versatile on the calculator. It provides access to 
+            functions like fractions, roots, exponents, absolute value, and advanced operations like numerical derivatives 
+            and integrals. You’ll also find tools for converting between decimals and fractions and managing complex numbers.
+          </p>
+
+          <h3 style="color:#3399ff;">The Apps Section</h3>
+          <p>
+            The <b>APPS</b> button gives access to preinstalled and user-added applications like Finance, 
+            Conics, and Inequality Graphing. These apps extend the calculator’s power by adding specialized features 
+            beyond what’s available in the default menus.
+          </p>
+
+          <h3 style="color:#3399ff;">Draw Menu</h3>
+          <p>
+            Accessed through <b>2nd → PRGM</b>, the <b>DRAW</b> menu lets you draw lines, circles, and text on graphs. 
+            You can label points of interest or visually mark intersections and solutions, making it a creative way 
+            to annotate and interpret graphs.
+          </p>
+
+          <h3 style="color:#3399ff;">Angle and Distribution Menus</h3>
+          <p>
+            The <b>ANGLE</b> menu (<b>2nd → APPS</b>) provides functions for converting between degrees and radians, 
+            inserting the π symbol, and working with unit vectors. The <b>DISTR</b> menu (<b>2nd → VARS</b>) 
+            contains statistical distributions such as normalpdf, binompdf, and invNorm — essential for probability and statistics.
+          </p>
+
+          <h3 style="color:#3399ff;">2nd Functions</h3>
+          <p>
+            Many keys on the TI-84+CE have secondary functions accessed by pressing the <b>2nd</b> key. 
+            These include shortcuts to features like inserting the degree symbol, opening setup menus, 
+            accessing memory, or quitting applications. Mastering 2nd functions dramatically improves speed and efficiency.
+          </p>
+        </div>
+      </div>
+
+      <!-- MAIN HEADER 2: Catalog -->
+      <div class="collapsible">
+        <button class="collapsible-header"><span class="arrow">▶</span>The Catalog</button>
+        <div class="collapsible-content">
+          <p>
+            The <b>CATALOG</b> function (accessed with <b>2nd → 0</b>) is a complete alphabetical list of every 
+            command and function available on your calculator. It’s an essential reference tool when you can’t 
+            find a function in the regular menus. You can scroll through commands or jump to a specific letter 
+            by pressing the corresponding key. The catalog ensures you never miss a capability that might 
+            not be visible elsewhere, making it one of the most powerful resources on the TI-84+CE.
+          </p>
+        </div>
+      </div>
+
+      <!-- MAIN HEADER 3: Programming -->
+      <div class="collapsible">
+        <button class="collapsible-header"><span class="arrow">▶</span>Programming and Applications</button>
+        <div class="collapsible-content">
+
+          <h3 style="color:#3399ff;">Preinstalled Apps</h3>
+          <p>
+            Your calculator comes with built-in apps like <b>Finance</b>, <b>Transform</b>, and <b>Inequality Graphing</b>. 
+            You can also install new apps to extend its functionality — for instance, games, scientific tools, or 
+            custom math utilities. To learn how to install apps on your TI-84+CE, visit 
+            <a href="https://education.ti.com/en/software/details/en/CA0E4C67D6E04E4E8C8E4F67F80CBB21/ti-connect-ce" target="_blank">this TI Education guide</a>.
+          </p>
+
+          <h3 style="color:#3399ff;">Programming in TI-BASIC</h3>
+          <p>
+            The <b>PRGM</b> button opens the programming interface, where you can write, edit, and run 
+            programs written in TI-BASIC — the calculator’s built-in language. You can make programs that 
+            perform repetitive calculations, generate patterns, draw shapes, or even play simple games. 
+            TI-BASIC is easy to learn and a great introduction to coding logic and structure.
+          </p>
+        </div>
+      </div>
+
+      <!-- MAIN HEADER 4: Starting Your Own Programs -->
+      <div class="collapsible">
+        <button class="collapsible-header"><span class="arrow">▶</span>How to Start Programming</button>
+        <div class="collapsible-content">
+
+          <h3 style="color:#3399ff;">Installing TI-Connect CE Software</h3>
+          <p>
+            To transfer or manage programs, download and install <b>TI-Connect CE</b> on your computer. 
+            It allows you to connect your calculator via USB, organize files, and send or receive data. 
+            You can find it on Texas Instruments’ official site.
+          </p>
+
+          <h3 style="color:#3399ff;">Using the Link Function</h3>
+          <p>
+            The <b>LINK</b> feature (accessible through <b>2nd → X,T,θ,n</b>) lets you send and receive programs, 
+            lists, and data between calculators or between your calculator and a computer. This is useful 
+            for sharing projects or transferring games and utilities.
+          </p>
+
+          <h3 style="color:#3399ff;">Making a Simple Program (Quadratic Formula Example)</h3>
+          <p>
+            You can create a new program by pressing <b>PRGM → NEW</b> and naming it. 
+            For example, to make a quadratic formula solver, use input commands for A, B, and C, 
+            then compute <code>(-B ± √(B²-4AC)) / (2A)</code>. Programs like these make problem-solving faster 
+            and help you understand logical structuring in code. See full syntax help at 
+            <a href="https://tibasicdev.wikidot.com/" target="_blank">TI-BASIC Developer Wiki</a>.
+          </p>
+
+          <h3 style="color:#3399ff;">Python on TI-84+CE</h3>
+          <p>
+            Some newer TI-84+CE models include built-in Python capability. 
+            It allows for more complex programs with loops, lists, and real data handling. 
+            For official Python documentation and setup guides, visit 
+            <a href="https://education.ti.com/en/guidebook/details/en/72C83B7778144C4F8A939D2E7DDAED16/ti-84-plus-ce-python-guide" target="_blank">
+              TI’s Python Resources
+            </a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>/ © 2025 TI-84+CE Beginner’s Guide /</p>
+  </footer>
+</body>
+</html>
