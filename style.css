@@ -1,4 +1,4 @@
-/* Retro TI-84+CE Guide Styles */
+/* === Retro TI-84+CE Guide Styles === */
 
 body {
   background-color: #121212;
@@ -8,6 +8,7 @@ body {
   padding: 0;
 }
 
+/* === Header === */
 header {
   background-color: #0a0a0a;
   padding: 20px;
@@ -17,9 +18,11 @@ header {
 
 header h1 {
   font-size: 2.5em;
-  text-shadow: 0 0 10px #33ff99;
+  color: #33ff99;
+  text-shadow: 0 0 10px #33ff99, 0 0 20px #00ff99;
 }
 
+/* === Navigation Bar === */
 nav {
   display: flex;
   justify-content: center;
@@ -38,9 +41,10 @@ nav a {
 
 nav a:hover {
   color: #fff;
-  text-shadow: 0 0 5px #33ff99;
+  text-shadow: 0 0 10px #33ff99, 0 0 20px #00ffcc;
 }
 
+/* === Main Content === */
 main {
   padding: 40px 10%;
 }
@@ -50,100 +54,80 @@ section {
 }
 
 section h2 {
-  color: #fff;
-  text-shadow: 0 0 5px #33ff99;
+  color: #33ff99;
+  text-shadow: 0 0 10px #33ff99, 0 0 20px #00ff99;
   border-bottom: 1px solid #33ff99;
   padding-bottom: 5px;
+  font-size: 1.8em;
 }
 
+/* === Images (Homepage and Section Images) === */
 .section-image {
   width: 100%;
   max-width: 600px;
+  height: 300px;
+  object-fit: cover;
   display: block;
   margin: 20px auto;
   border: 2px solid #33ff99;
-  box-shadow: 0 0 10px #33ff99;
   border-radius: 6px;
+  box-shadow: 0 0 10px #33ff99;
+  position: relative;
+  transition: transform 0.3s, filter 0.3s, opacity 0.3s;
 }
 
-/* Grayscale and hover effect */
+/* === Grayscale and Hover Glow === */
 .section-image.gray-out {
   filter: grayscale(60%);
   opacity: 0.8;
-  transition: filter 0.3s, opacity 0.3s;
 }
 
-.section-image.gray-out:hover {
-  filter: grayscale(0%);
-  opacity: 1;
-}
-
-footer {
-  background-color: #0a0a0a;
-  color: #33ff99;
-  text-align: center;
-  padding: 15px;
-  border-top: 1px solid #33ff99;
-}
-/* Hover zoom + color restore */
 .section-image.gray-out:hover {
   filter: grayscale(0%);
   opacity: 1;
   transform: scale(1.05);
-  transition: filter 0.3s, opacity 0.3s, transform 0.3s;
-}
-.section-image.gray-out {
-  filter: grayscale(60%);
-  opacity: 0.8;
-  transition: filter 0.3s, opacity 0.3s, transform 0.3s;
-}
-.section-image.gray-out:hover {
   box-shadow: 0 0 20px #33ff99, 0 0 40px #33ff99;
 }
-/* === Consistent Image Size for Index Page === */
-#intro .section-image,
-#beginner .section-image,
-#capabilities .section-image,
-#functions .section-image {
-  width: 100%;
-  max-width: 600px;
-  height: 300px; /* fixed height */
-  object-fit: cover; /* crop and stretch to fill */
+
+/* === Image Overlay for "Go to Section" === */
+.image-overlay {
+  position: relative;
+  display: inline-block;
+}
+
+.image-overlay img {
   display: block;
-  margin: 20px auto;
+  width: 100%;
+  border-radius: 10px;
   border: 2px solid #33ff99;
   box-shadow: 0 0 10px #33ff99;
-  border-radius: 6px;
-  position: relative;
 }
 
-/* === Gray Transparent Overlay === */
-.section-image.gray-out {
-  filter: grayscale(60%);
-  opacity: 0.8;
-  transition: filter 0.3s, opacity 0.3s, transform 0.3s;
-}
-
-.section-image.gray-out::after {
-  content: "";
+.overlay-text {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(50, 50, 50, 0.35); /* semi-transparent gray overlay */
-  border-radius: 6px;
-  pointer-events: none; /* lets hover effects pass through */
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #33ff99;
+  font-weight: bold;
+  font-size: 1.1em;
+  background: rgba(0, 0, 0, 0);
+  opacity: 0;
+  transition: all 0.3s ease;
+  border-radius: 10px;
 }
 
-/* === Hover Zoom + Glow === */
-.section-image.gray-out:hover {
-  filter: grayscale(0%);
+.image-overlay:hover .overlay-text {
+  background: rgba(0, 0, 0, 0.6);
   opacity: 1;
-  transform: scale(1.05);
-  box-shadow: 0 0 20px #33ff99, 0 0 40px #33ff99;
+  text-shadow: 0 0 8px #33ff99;
 }
-/* Collapsible Section Styles */
+
+/* === Collapsible Section Styles === */
 .collapsible {
   margin: 25px 0;
   border: 1px solid #33ff99;
@@ -177,6 +161,20 @@ footer {
   box-shadow: inset 0 0 10px #33ff99;
 }
 
+/* === Arrow animation for collapsibles === */
+.collapsible-header .arrow {
+  display: inline-block;
+  margin-right: 10px;
+  transition: transform 0.25s ease;
+  transform: rotate(0deg);
+  color: #33ff99;
+  text-shadow: 0 0 8px #33ff99;
+}
+
+.collapsible-header.active .arrow {
+  transform: rotate(90deg);
+}
+
 .collapsible-content {
   background-color: #0a0a0a;
   color: #33ff99;
@@ -200,58 +198,12 @@ footer {
   margin: 15px auto;
   box-shadow: 0 0 10px #33ff99;
 }
-/* Arrow animation for collapsibles */
-.collapsible-header .arrow {
-  display: inline-block;
-  margin-right: 10px;
-  transition: transform 0.3s ease;
+
+/* === Footer === */
+footer {
+  background-color: #0a0a0a;
   color: #33ff99;
-  text-shadow: 0 0 8px #33ff99;
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #33ff99;
 }
-/* Arrow basics and transition */
-.collapsible-header .arrow {
-  display: inline-block;       /* required so transform rotates the glyph */
-  margin-right: 10px;
-  transition: transform 0.25s ease;
-  transform: rotate(0deg);     /* default pointing right */
-  color: #33ff99;
-  text-shadow: 0 0 8px #33ff99;
-}
-
-/* Rotate arrow when the header has .active */
-.collapsible-header.active .arrow {
-  transform: rotate(90deg);    /* rotates to point down */
-}
-.image-overlay {
-  position: relative;
-  display: inline-block;
-}
-
-.image-overlay img {
-  display: block;
-  width: 100%;
-  border-radius: 10px;
-}
-
-.overlay-text {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #00ff9f;
-  font-weight: bold;
-  background: rgba(0, 0, 0, 0);
-  opacity: 0;
-  transition: all 0.3s ease;
-  border-radius: 10px;
-}
-
-.image-overlay:hover .overlay-text {
-  background: rgba(0, 0, 0, 0.6);
-  opacity: 1;
-}
-
