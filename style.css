@@ -267,4 +267,28 @@ footer {
   background: rgba(60, 60, 60, 0.7); /* dark gray overlay */
   opacity: 1;
 }
+/* === Image Size Restriction === */
+.section-image {
+  width: 100%;
+  max-width: 400px; /* Restrict image width for consistent size */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+  margin: 20px auto;
+  border: 2px solid #33ff99;
+  box-shadow: 0 0 10px #33ff99;
+  border-radius: 6px;
+}
+
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Optionally enforce max height if needed */
+.section-image {
+  max-height: 250px; /* You can adjust this if images still appear too large */
+  object-fit: cover;
+}
 
