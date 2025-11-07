@@ -3,184 +3,129 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Getting Started – TI-84+CE</title>
+  <title>Beginner Basics – TI-84+CE Guide</title>
   <link rel="stylesheet" href="style.css">
   <style>
+    /* Collapsible styling */
     .collapsible {
-      background-color: #111;
-      color: #00ff9f;
+      background-color: #000;
+      color: #00ff99;
       cursor: pointer;
-      padding: 15px;
+      padding: 18px;
       width: 100%;
-      border: none;
+      border: 2px solid #00ff99;
       text-align: left;
-      font-size: 1.1em;
-      transition: background-color 0.3s;
-      border-bottom: 1px solid #00ff9f;
+      outline: none;
+      font-size: 20px;
+      font-family: 'Courier New', monospace;
+      transition: background-color 0.3s, box-shadow 0.3s;
+      text-shadow: 0 0 10px #00ff99;
     }
 
     .collapsible:hover {
-      background-color: #222;
+      background-color: #003322;
+      box-shadow: 0 0 15px #00ff99;
     }
 
-    .collapsible::after {
-      content: "▼";
+    .collapsible:after {
+      content: '▼';
       float: right;
-      transition: transform 0.3s;
+      margin-left: 5px;
+      transition: transform 0.3s ease;
     }
 
-    .collapsible.active::after {
-      transform: rotate(-180deg);
+    .collapsible.active:after {
+      transform: rotate(180deg);
     }
 
     .content {
-      max-height: 0;
+      padding: 0 18px;
+      display: none;
       overflow: hidden;
-      background-color: #000;
-      color: #ccc;
-      padding: 0 15px;
-      transition: max-height 0.3s ease-out, padding 0.3s;
+      background-color: #001a0f;
+      border-left: 2px solid #00ff99;
+      border-right: 2px solid #00ff99;
+      border-bottom: 2px solid #00ff99;
+      color: #ccffcc;
+      font-family: 'Courier New', monospace;
+      line-height: 1.6;
     }
 
-    .content.open {
-      max-height: 1000px;
-      padding: 15px;
-    }
-
-    .section-image {
-      width: 80%;
+    .content img {
+      width: 100%;
+      max-width: 500px;
       display: block;
       margin: 15px auto;
-      border: 2px solid #00ff9f;
+      border: 1px solid #00ff99;
       border-radius: 8px;
     }
 
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      max-width: 100%;
-      margin: 15px 0;
-      border: 2px solid #00ff9f;
-      border-radius: 8px;
-    }
-
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
+    iframe {
       width: 100%;
-      height: 100%;
+      max-width: 560px;
+      height: 315px;
+      display: block;
+      margin: 20px auto;
+      border: 2px solid #00ff99;
+      border-radius: 10px;
     }
   </style>
 </head>
+
 <body>
   <header>
-    <h1>Getting Started with Your TI-84+CE</h1>
-    <p>Beginner Basics</p>
+    <h1>TI-84+CE Beginner Basics</h1>
   </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="beginner.html">Getting Started</a>
-    <a href="capabilities.html">Capabilities</a>
-    <a href="functions.html">Functions</a>
-    <a href="tips.html">Tips & Tricks</a>
-  </nav>
-
   <main>
-    <button class="collapsible">Powering On & Basic Navigation</button>
+    <button class="collapsible">Powering On & Navigation</button>
     <div class="content">
-      <p>
-        To power on your TI-84+CE, press the <strong>ON</strong> key at the bottom left.
-        Use the arrow keys to move around menus and options. Press <strong>2ND</strong> + <strong>ON</strong>
-        to turn it off. 
-      </p>
-      <img src="images/ti84_on.jpg" alt="TI-84 power button" class="section-image">
+      <p>To power on your TI-84+CE, press the <strong>ON</strong> button at the bottom left. 
+      Use the arrow keys to move around menus and lists. The <strong>2ND</strong> key (blue) and 
+      <strong>ALPHA</strong> key (green) let you access alternate functions of buttons.</p>
+      <img src="images/ti84_on.jpg" alt="Turning on the TI-84+CE">
     </div>
 
-    <button class="collapsible">The 2ND Key</button>
+    <button class="collapsible">The Alpha Key</button>
     <div class="content">
-      <p>
-        The <strong>2ND</strong> key gives you access to the secondary (yellow) function of each button.
-        It’s how you open menus like “QUIT” (2ND + MODE), “ANGLE” (2ND + APPS), and more.
-        You’ll use it constantly to navigate and access hidden calculator tools.
-      </p>
-      <img src="images/ti84_second.jpg" alt="TI-84 second key" class="section-image">
+      <p>The <strong>ALPHA</strong> key allows you to type letters and access the green secondary functions 
+      printed above many keys. For instance, pressing <strong>ALPHA</strong> + <strong>MATH</strong> brings up 
+      the “FUNC” menu. It’s useful for naming variables or entering text in programs.</p>
+      <img src="images/ti84_alpha.jpg" alt="TI-84 Alpha key usage">
     </div>
 
-    <button class="collapsible">The ALPHA Key</button>
+    <button class="collapsible">The Second Key</button>
     <div class="content">
-      <p>
-        The <strong>ALPHA</strong> key lets you type letters and access the green-labeled
-        functions printed above certain keys. For instance, pressing <strong>ALPHA</strong> + <strong>MATH</strong>
-        can open shortcuts for variable names or commands. Holding it down lets you type multiple letters at once.
-      </p>
-      <img src="images/ti84_alpha.jpg" alt="TI-84 alpha key" class="section-image">
+      <p>The <strong>2ND</strong> key activates blue-labeled commands above buttons. This is how you 
+      access functions like inserting a negative sign, the ANS recall, or changing modes. 
+      It’s essential for navigating deeper calculator features.</p>
+      <img src="images/ti84_second.jpg" alt="TI-84 Second key usage">
     </div>
 
-    <button class="collapsible">Moving Around Menus</button>
+    <button class="collapsible">Graphing Basics</button>
     <div class="content">
-      <p>
-        Use the arrow keys to scroll through lists, navigate menus, and adjust graphing windows.
-        When editing equations or programs, <strong>LEFT</strong> and <strong>RIGHT</strong> move your cursor precisely,
-        while <strong>UP</strong> and <strong>DOWN</strong> browse history or switch lines.
-      </p>
-      <img src="images/ti84_arrows.jpg" alt="TI-84 arrow keys" class="section-image">
+      <p>Press the <strong>Y=</strong> key to enter graph mode. From here, you can type in equations like 
+      <em>Y1 = X²</em> and press <strong>GRAPH</strong> to visualize them. Use the <strong>WINDOW</strong> 
+      button to adjust the graph view and <strong>TRACE</strong> to move along the curve.</p>
+      <img src="images/ti84_graph.jpg" alt="TI-84 Graph screen">
     </div>
 
-    <button class="collapsible">Typing Letters</button>
+    <button class="collapsible">Video Overview</button>
     <div class="content">
-      <p>
-        To input text, press <strong>ALPHA</strong> followed by any key that has a green letter printed above it.
-        This is essential when naming variables, labeling graphs, or entering notes.
-        To lock Alpha mode, press <strong>2ND</strong> + <strong>ALPHA</strong>.
-      </p>
-      <img src="images/ti84_typing.jpg" alt="Typing letters on TI-84" class="section-image">
-    </div>
-
-    <button class="collapsible">Opening the Graph</button>
-    <div class="content">
-      <p>
-        Press the <strong>Y=</strong> button to open the graphing menu.
-        Enter functions like <strong>Y1 = X²</strong> and hit <strong>GRAPH</strong> to see it appear.
-        You can use <strong>WINDOW</strong> to control the viewing area and <strong>ZOOM</strong> to adjust automatically.
-      </p>
-      <img src="images/ti84_graph.jpg" alt="Graphing on TI-84" class="section-image">
-    </div>
-
-    <!-- New Collapsible Section for the Video -->
-    <button class="collapsible">General TI-84+CE Functions (Video Guide)</button>
-    <div class="content">
-      <p>
-        Here’s a detailed walkthrough video that demonstrates the key features and everyday functions
-        of the TI-84+CE — perfect if you prefer learning visually.
-      </p>
-      <div class="video-container">
-        <iframe 
-          src="https://www.youtube.com/embed/055_g60yVmg" 
-          title="TI-84+CE Basics Video"
-          frameborder="0"
-          allowfullscreen>
-        </iframe>
-      </div>
+      <p>This video provides a general overview of important TI-84+CE functions every beginner should know.</p>
+      <iframe src="https://www.youtube.com/embed/055_g60yVmg" title="TI-84+CE Beginner Video" allowfullscreen></iframe>
     </div>
   </main>
 
-  <footer>
-    <p>/ © 2025 TI-84+CE Beginner’s Guide /</p>
-  </footer>
-
   <script>
-    const collapsibles = document.querySelectorAll(".collapsible");
-    collapsibles.forEach(button => {
-      button.addEventListener("click", () => {
-        button.classList.toggle("active");
-        const content = button.nextElementSibling;
-        content.classList.toggle("open");
+    const coll = document.getElementsByClassName("collapsible");
+    for (let i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        const content = this.nextElementSibling;
+        content.style.display = content.style.display === "block" ? "none" : "block";
       });
-    });
+    }
   </script>
 </body>
 </html>
