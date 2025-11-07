@@ -222,4 +222,36 @@ footer {
 .collapsible-header.active .arrow {
   transform: rotate(90deg);    /* rotates to point down */
 }
+.image-overlay {
+  position: relative;
+  display: inline-block;
+}
+
+.image-overlay img {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #00ff9f;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0);
+  opacity: 0;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+
+.image-overlay:hover .overlay-text {
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 1;
+}
 
