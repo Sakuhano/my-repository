@@ -3,66 +3,150 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Working with Functions – TI-84+CE Beginner’s Guide</title>
+  <title>Functions – TI-84+CE Beginner’s Guide</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .collapsible {
-      background-color: rgba(0, 0, 0, 0.7);
-      color: #00ff00;
-      cursor: pointer;
-      padding: 16px;
-      width: 100%;
-      border: none;
-      text-align: left;
-      outline: none;
+    /* Keep the glow + match capabilities */
+    body {
+      background-color: #121212;
+      color: #33ff99;
       font-family: 'Courier New', monospace;
-      font-size: 1.3em;
-      border-bottom: 1px solid #00ff00;
-      transition: 0.4s;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #0a0a0a;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #33ff99;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      color: #33ff99;
+      text-shadow: 0 0 10px #33ff99, 0 0 20px #00ff99;
+    }
+
+    header p {
+      color: #00ffaa;
+      text-shadow: 0 0 6px #00ff99;
+    }
+
+    nav {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      justify-content: center;
+      gap: 25px;
+      background-color: #1c1c1c;
+      border-bottom: 1px solid #33ff99;
+      padding: 10px 0;
     }
 
-    .collapsible:hover {
-      background-color: rgba(0, 255, 0, 0.1);
+    nav a {
+      color: #33ff99;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s;
     }
 
-    .content {
-      padding: 0 18px;
-      display: none;
+    nav a:hover {
+      color: #fff;
+      text-shadow: 0 0 10px #33ff99, 0 0 20px #00ffcc;
+    }
+
+    main {
+      padding: 40px 10%;
+    }
+
+    /* === Collapsible Section Styles === */
+    .collapsible {
+      margin: 25px 0;
+      border: 1px solid #33ff99;
+      border-radius: 6px;
       overflow: hidden;
-      background-color: rgba(0, 0, 0, 0.8);
-      border-left: 2px solid #00ff00;
-      border-right: 2px solid #00ff00;
+      box-shadow: 0 0 10px #33ff99;
     }
 
-    .subheader {
-      color: #00aaff;
-      font-size: 1.1em;
-      margin-top: 15px;
+    .collapsible-header {
+      background-color: #121212;
+      color: #33ff99;
+      width: 100%;
+      text-align: left;
+      padding: 15px 20px;
+      font-size: 1.2em;
+      font-family: 'Courier New', monospace;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      text-shadow: 0 0 8px #33ff99;
+      transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .collapsible-header:hover {
+      background-color: #0a0a0a;
+      box-shadow: 0 0 15px #33ff99;
+    }
+
+    .collapsible-header.active {
+      background-color: #0a0a0a;
+      box-shadow: inset 0 0 10px #33ff99;
     }
 
     .arrow {
-      transition: transform 0.3s ease;
+      display: inline-block;
+      transition: transform 0.25s ease;
+      transform: rotate(0deg);
+      color: #33ff99;
+      text-shadow: 0 0 8px #33ff99;
     }
 
-    .collapsible.active .arrow {
+    .collapsible-header.active .arrow {
       transform: rotate(90deg);
     }
 
-    .content p {
-      color: #00ffcc;
-      font-family: 'Courier New', monospace;
-      line-height: 1.5em;
-      margin-bottom: 20px;
+    .collapsible-content {
+      background-color: #0a0a0a;
+      color: #33ff99;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      padding: 0 20px;
+    }
+
+    .collapsible-content.open {
+      max-height: 800px;
+      padding: 20px;
+    }
+
+    .collapsible-content h3 {
+      color: #00aaff;
+      font-size: 1.1em;
+      margin-top: 10px;
+      text-shadow: 0 0 10px #00aaff;
+    }
+
+    .collapsible-content p {
+      margin: 10px 0 20px 0;
+      line-height: 1.5;
+      color: #99ffcc;
+    }
+
+    footer {
+      background-color: #0a0a0a;
+      color: #33ff99;
+      text-align: center;
+      padding: 15px;
+      border-top: 1px solid #33ff99;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Working with Functions</h1>
-    <p>Graphing, analyzing, and understanding equations on the TI-84+CE</p>
+    <h1>Functions</h1>
+    <p>Graphing, analyzing, and mastering functions on your TI-84+CE</p>
   </header>
 
   <nav>
@@ -70,74 +154,91 @@
     <a href="beginner.html">Getting Started</a>
     <a href="capabilities.html">Capabilities</a>
     <a href="functions.html">Functions</a>
+    <a href="tips.html">Tips & Tricks</a>
   </nav>
 
   <main>
-    <!-- Section 1 -->
-    <button class="collapsible">Y= Menu & Graphing Basics <span class="arrow">▶</span></button>
-    <div class="content">
-      <h3 class="subheader">Opening the Y= Menu</h3>
-      <p>The Y= button opens the function editor, where you can enter equations you want to graph. Each line (Y1, Y2, etc.) represents a separate function. You can toggle any function on or off by highlighting the equals sign and pressing ENTER. This is the main area where graphing begins.</p>
 
-      <h3 class="subheader">Entering Functions</h3>
-      <p>To enter functions, simply type using the keypad. The calculator uses standard syntax, such as <code>x^2</code> for x squared or <code>sin(x)</code> for sine. If you need variables, use the X,T,θ,n key. The color and style of each graph can also be changed by selecting the icon before Y=.</p>
+    <!-- 1: Y= Menu & Graphing -->
+    <div class="collapsible">
+      <button class="collapsible-header">Y= Menu & Graphing Basics <span class="arrow">▶</span></button>
+      <div class="collapsible-content">
+        <h3>Opening the Y= Menu</h3>
+        <p>The <b>Y=</b> button is the starting point for graphing. Each line represents a new function such as Y1, Y2, etc. You can toggle visibility with ENTER and use color or style changes to tell graphs apart.</p>
 
-      <h3 class="subheader">Using 2nd and Alpha</h3>
-      <p>Pressing <span style="color:#00aaff;">2nd</span> while in Y= allows access to alternate functions like deleting all entries or inserting a new equation line. The <span style="color:#00aaff;">ALPHA</span> key lets you type letters into equations, useful for defining stored variables like A, B, or C.</p>
+        <h3>Entering Functions</h3>
+        <p>Type directly using the keypad — use <code>x</code> (from the X,T,θ,n key) and symbols like ^, ÷, or sin(). It supports polynomial, trigonometric, and even parametric equations.</p>
+
+        <h3>Using 2nd and Alpha</h3>
+        <p><span style="color:#00aaff;">2nd</span> gives you alternate functions like “Delete All” or inserting another equation. <span style="color:#00aaff;">Alpha</span> lets you type letters, ideal for storing or naming variables.</p>
+      </div>
     </div>
 
-    <!-- Section 2 -->
-    <button class="collapsible">Window & Zoom Settings <span class="arrow">▶</span></button>
-    <div class="content">
-      <h3 class="subheader">Adjusting Window</h3>
-      <p>The WINDOW key determines the visible portion of the graph. You can set Xmin, Xmax, Ymin, and Ymax to control your graph’s size. A typical setting like Xmin=-10, Xmax=10, Ymin=-10, Ymax=10 gives a balanced view for most equations.</p>
+    <!-- 2: Window & Zoom -->
+    <div class="collapsible">
+      <button class="collapsible-header">Window & Zoom Settings <span class="arrow">▶</span></button>
+      <div class="collapsible-content">
+        <h3>Adjusting Window</h3>
+        <p>The <b>WINDOW</b> key defines the portion of the graph shown. Adjust Xmin, Xmax, and Y values to zoom in or out. For example, Xmin = -10, Xmax = 10 gives a standard view.</p>
 
-      <h3 class="subheader">Using Zoom Options</h3>
-      <p>Press ZOOM to access built-in presets like ZoomStandard, ZoomFit, and ZoomStat. ZoomStandard resets your graph to a 10x10 view, while ZoomFit automatically adjusts the Y-scale to match your equation’s range. These shortcuts save time and keep your graphs centered.</p>
+        <h3>Zoom Functions</h3>
+        <p>Press <b>ZOOM</b> for quick presets like ZoomStandard, ZoomFit, or ZoomStat. These options help automatically center and scale your graphs to fit perfectly in view.</p>
+      </div>
     </div>
 
-    <!-- Section 3 -->
-    <button class="collapsible">Trace & Analyze Functions <span class="arrow">▶</span></button>
-    <div class="content">
-      <h3 class="subheader">Using TRACE</h3>
-      <p>Press TRACE to move along a graph and view coordinates for specific points. Use the arrow keys to move left or right and check exact X and Y values. This is useful for exploring where your graph increases, decreases, or crosses the axes.</p>
+    <!-- 3: Trace & Analyze -->
+    <div class="collapsible">
+      <button class="collapsible-header">Trace & Analyze Functions <span class="arrow">▶</span></button>
+      <div class="collapsible-content">
+        <h3>Using TRACE</h3>
+        <p>Press <b>TRACE</b> to move across the graph and view (x, y) coordinates. Use arrow keys to move left or right and analyze curve behavior interactively.</p>
 
-      <h3 class="subheader">Analyzing with CALC</h3>
-      <p>Press 2nd + TRACE to open the CALC menu. This powerful tool lets you find zeros, minimums, maximums, intersections, and more. You simply select the option, then move the cursor near the point of interest to calculate precise values.</p>
+        <h3>Using CALC Menu</h3>
+        <p>Press <b>2nd + TRACE</b> to open CALC. You can find zeros, intersections, maximums, and more. Select an option and move near your target to calculate precise values.</p>
+      </div>
     </div>
 
-    <!-- Section 4 -->
-    <button class="collapsible">Table & CALC Menu <span class="arrow">▶</span></button>
-    <div class="content">
-      <h3 class="subheader">Viewing Tables</h3>
-      <p>Press 2nd + GRAPH to view the table of values for your equations. You can scroll through X and Y pairs or adjust the table settings under 2nd + WINDOW. This helps you compare numeric patterns or test values before graphing.</p>
+    <!-- 4: Table & Data -->
+    <div class="collapsible">
+      <button class="collapsible-header">Table & CALC Menu <span class="arrow">▶</span></button>
+      <div class="collapsible-content">
+        <h3>Table View</h3>
+        <p>Press <b>2nd + GRAPH</b> to access the table of values. It’s useful for visualizing changes in Y given different X values without graphing every point manually.</p>
 
-      <h3 class="subheader">Editing Table Settings</h3>
-      <p>Within TBLSET (2nd + WINDOW), you can change the starting X value and increments between each step. Setting ΔTbl to smaller values gives you more precision when analyzing function changes numerically.</p>
+        <h3>Table Settings</h3>
+        <p>Go to <b>2nd + WINDOW</b> to set ΔTbl, start values, or independent variables. This controls how detailed your numeric table becomes for precision work.</p>
+      </div>
     </div>
 
-    <!-- Section 5 -->
-    <button class="collapsible">Graph Styles & Secondary Functions <span class="arrow">▶</span></button>
-    <div class="content">
-      <h3 class="subheader">Graph Styles</h3>
-      <p>You can change how each graph looks by selecting the small icon to the left of Y=. Choose between solid, dotted, or thick lines, and even select colors if your calculator supports them. This helps distinguish multiple graphs at once.</p>
+    <!-- 5: Graph Styles -->
+    <div class="collapsible">
+      <button class="collapsible-header">Graph Styles & Secondary Functions <span class="arrow">▶</span></button>
+      <div class="collapsible-content">
+        <h3>Custom Graph Styles</h3>
+        <p>Next to each Y= entry, there’s a small icon — press ENTER on it to change line style or color. You can make each graph stand out with dotted or bold effects.</p>
 
-      <h3 class="subheader">Secondary Functions</h3>
-      <p>Nearly every key has a secondary function accessible by pressing <span style="color:#00aaff;">2nd</span>. For graphing, this allows shortcuts like accessing the CALC menu, adjusting format settings, or tracing more efficiently. Learning these combinations saves time and enhances precision.</p>
+        <h3>Secondary Graphing Functions</h3>
+        <p>Use <span style="color:#00aaff;">2nd</span> to open menus like FORMAT or DRAW. These control axes display, grid settings, and background color. Mastering them gives your graphs a professional look.</p>
+      </div>
     </div>
+
   </main>
 
   <footer>
-    <p>/ © 2025 TI-84+CE Beginner’s Guide /</p>
+    <p>© 2025 TI-84+CE Beginner’s Guide</p>
   </footer>
 
   <script>
-    const collapsibles = document.querySelectorAll(".collapsible");
-    collapsibles.forEach((col) => {
-      col.addEventListener("click", function() {
-        this.classList.toggle("active");
-        const content = this.nextElementSibling;
-        content.style.display = content.style.display === "block" ? "none" : "block";
+    const headers = document.querySelectorAll('.collapsible-header');
+    headers.forEach(header => {
+      header.addEventListener('click', () => {
+        header.classList.toggle('active');
+        const content = header.nextElementSibling;
+        if (content.classList.contains('open')) {
+          content.classList.remove('open');
+        } else {
+          content.classList.add('open');
+        }
       });
     });
   </script>
