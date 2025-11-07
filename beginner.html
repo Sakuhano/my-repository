@@ -90,7 +90,7 @@
   </nav>
 
   <main>
-    <button class="collapsible">🔋 Powering On & Basic Navigation</button>
+    <button class="collapsible">Powering On & Basic Navigation</button>
     <div class="content">
       <p>
         To power on your TI-84+CE, press the <strong>ON</strong> key at the bottom left.
@@ -100,7 +100,7 @@
       <img src="images/ti84_on.jpg" alt="TI-84 power button" class="section-image">
     </div>
 
-    <button class="collapsible">🟩 The 2ND Key</button>
+    <button class="collapsible">The 2ND Key</button>
     <div class="content">
       <p>
         The <strong>2ND</strong> key gives you access to the secondary (yellow) function of each button.
@@ -110,7 +110,7 @@
       <img src="images/ti84_second.jpg" alt="TI-84 second key" class="section-image">
     </div>
 
-    <button class="collapsible">🟥 The ALPHA Key</button>
+    <button class="collapsible">The ALPHA Key</button>
     <div class="content">
       <p>
         The <strong>ALPHA</strong> key lets you type letters and access the green-labeled
@@ -120,7 +120,7 @@
       <img src="images/ti84_alpha.jpg" alt="TI-84 alpha key" class="section-image">
     </div>
 
-    <button class="collapsible">🎯 Moving Around Menus</button>
+    <button class="collapsible">Moving Around Menus</button>
     <div class="content">
       <p>
         Use the arrow keys to scroll through lists, navigate menus, and adjust graphing windows.
@@ -130,7 +130,7 @@
       <img src="images/ti84_arrows.jpg" alt="TI-84 arrow keys" class="section-image">
     </div>
 
-    <button class="collapsible">🔠 Typing Letters</button>
+    <button class="collapsible">Typing Letters</button>
     <div class="content">
       <p>
         To input text, press <strong>ALPHA</strong> followed by any key that has a green letter printed above it.
@@ -140,7 +140,47 @@
       <img src="images/ti84_typing.jpg" alt="Typing letters on TI-84" class="section-image">
     </div>
 
-    <button class="collapsible">📈 Opening the Graph</button>
+    <button class="collapsible">Opening the Graph</button>
     <div class="content">
       <p>
-        Press the <strong>Y=</strong> button to open the graphing men
+        Press the <strong>Y=</strong> button to open the graphing menu.
+        Enter functions like <strong>Y1 = X²</strong> and hit <strong>GRAPH</strong> to see it appear.
+        You can use <strong>WINDOW</strong> to control the viewing area and <strong>ZOOM</strong> to adjust automatically.
+      </p>
+      <img src="images/ti84_graph.jpg" alt="Graphing on TI-84" class="section-image">
+    </div>
+
+    <!-- New Collapsible Section for the Video -->
+    <button class="collapsible">General TI-84+CE Functions (Video Guide)</button>
+    <div class="content">
+      <p>
+        Here’s a detailed walkthrough video that demonstrates the key features and everyday functions
+        of the TI-84+CE — perfect if you prefer learning visually.
+      </p>
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/055_g60yVmg" 
+          title="TI-84+CE Basics Video"
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>/ © 2025 TI-84+CE Beginner’s Guide /</p>
+  </footer>
+
+  <script>
+    const collapsibles = document.querySelectorAll(".collapsible");
+    collapsibles.forEach(button => {
+      button.addEventListener("click", () => {
+        button.classList.toggle("active");
+        const content = button.nextElementSibling;
+        content.classList.toggle("open");
+      });
+    });
+  </script>
+</body>
+</html>
