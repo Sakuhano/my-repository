@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Working with Functions – TI-84+CE Beginner’s Guide</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .collapsible {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #00ff00;
+      cursor: pointer;
+      padding: 16px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-family: 'Courier New', monospace;
+      font-size: 1.3em;
+      border-bottom: 1px solid #00ff00;
+      transition: 0.4s;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .collapsible:hover {
+      background-color: rgba(0, 255, 0, 0.1);
+    }
+
+    .content {
+      padding: 0 18px;
+      display: none;
+      overflow: hidden;
+      background-color: rgba(0, 0, 0, 0.8);
+      border-left: 2px solid #00ff00;
+      border-right: 2px solid #00ff00;
+    }
+
+    .subheader {
+      color: #00aaff;
+      font-size: 1.1em;
+      margin-top: 15px;
+    }
+
+    .arrow {
+      transition: transform 0.3s ease;
+    }
+
+    .collapsible.active .arrow {
+      transform: rotate(90deg);
+    }
+
+    .content p {
+      color: #00ffcc;
+      font-family: 'Courier New', monospace;
+      line-height: 1.5em;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Working with Functions</h1>
+    <p>Graphing, analyzing, and understanding equations on the TI-84+CE</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="beginner.html">Getting Started</a>
+    <a href="capabilities.html">Capabilities</a>
+    <a href="functions.html">Functions</a>
+    <a href="tips.html">Tips & Tricks</a>
+  </nav>
+
+  <main>
+    <!-- Section 1 -->
+    <button class="collapsible">Y= Menu & Graphing Basics <span class="arrow">▶</span></button>
+    <div class="content">
+      <h3 class="subheader">Opening the Y= Menu</h3>
+      <p>The Y= button opens the function editor, where you can enter equations you want to graph. Each line (Y1, Y2, etc.) represents a separate function. You can toggle any function on or off by highlighting the equals sign and pressing ENTER. This is the main area where graphing begins.</p>
+
+      <h3 class="subheader">Entering Functions</h3>
+      <p>To enter functions, simply type using the keypad. The calculator uses standard syntax, such as <code>x^2</code> for x squared or <code>sin(x)</code> for sine. If you need variables, use the X,T,θ,n key. The color and style of each graph can also be changed by selecting the icon before Y=.</p>
+
+      <h3 class="subheader">Using 2nd and Alpha</h3>
+      <p>Pressing <span style="color:#00aaff;">2nd</span> while in Y= allows access to alternate functions like deleting all entries or inserting a new equation line. The <span style="color:#00aaff;">ALPHA</span> key lets you type letters into equations, useful for defining stored variables like A, B, or C.</p>
+    </div>
+
+    <!-- Section 2 -->
+    <button class="collapsible">Window & Zoom Settings <span class="arrow">▶</span></button>
+    <div class="content">
+      <h3 class="subheader">Adjusting Window</h3>
+      <p>The WINDOW key determines the visible portion of the graph. You can set Xmin, Xmax, Ymin, and Ymax to control your graph’s size. A typical setting like Xmin=-10, Xmax=10, Ymin=-10, Ymax=10 gives a balanced view for most equations.</p>
+
+      <h3 class="subheader">Using Zoom Options</h3>
+      <p>Press ZOOM to access built-in presets like ZoomStandard, ZoomFit, and ZoomStat. ZoomStandard resets your graph to a 10x10 view, while ZoomFit automatically adjusts the Y-scale to match your equation’s range. These shortcuts save time and keep your graphs centered.</p>
+    </div>
+
+    <!-- Section 3 -->
+    <button class="collapsible">Trace & Analyze Functions <span class="arrow">▶</span></button>
+    <div class="content">
+      <h3 class="subheader">Using TRACE</h3>
+      <p>Press TRACE to move along a graph and view coordinates for specific points. Use the arrow keys to move left or right and check exact X and Y values. This is useful for exploring where your graph increases, decreases, or crosses the axes.</p>
+
+      <h3 class="subheader">Analyzing with CALC</h3>
+      <p>Press 2nd + TRACE to open the CALC menu. This powerful tool lets you find zeros, minimums, maximums, intersections, and more. You simply select the option, then move the cursor near the point of interest to calculate precise values.</p>
+    </div>
+
+    <!-- Section 4 -->
+    <button class="collapsible">Table & CALC Menu <span class="arrow">▶</span></button>
+    <div class="content">
+      <h3 class="subheader">Viewing Tables</h3>
+      <p>Press 2nd + GRAPH to view the table of values for your equations. You can scroll through X and Y pairs or adjust the table settings under 2nd + WINDOW. This helps you compare numeric patterns or test values before graphing.</p>
+
+      <h3 class="subheader">Editing Table Settings</h3>
+      <p>Within TBLSET (2nd + WINDOW), you can change the starting X value and increments between each step. Setting ΔTbl to smaller values gives you more precision when analyzing function changes numerically.</p>
+    </div>
+
+    <!-- Section 5 -->
+    <button class="collapsible">Graph Styles & Secondary Functions <span class="arrow">▶</span></button>
+    <div class="content">
+      <h3 class="subheader">Graph Styles</h3>
+      <p>You can change how each graph looks by selecting the small icon to the left of Y=. Choose between solid, dotted, or thick lines, and even select colors if your calculator supports them. This helps distinguish multiple graphs at once.</p>
+
+      <h3 class="subheader">Secondary Functions</h3>
+      <p>Nearly every key has a secondary function accessible by pressing <span style="color:#00aaff;">2nd</span>. For graphing, this allows shortcuts like accessing the CALC menu, adjusting format settings, or tracing more efficiently. Learning these combinations saves time and enhances precision.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>/ © 2025 TI-84+CE Beginner’s Guide /</p>
+  </footer>
+
+  <script>
+    const collapsibles = document.querySelectorAll(".collapsible");
+    collapsibles.forEach((col) => {
+      col.addEventListener("click", function() {
+        this.classList.toggle("active");
+        const content = this.nextElementSibling;
+        content.style.display = content.style.display === "block" ? "none" : "block";
+      });
+    });
+  </script>
+</body>
+</html>
